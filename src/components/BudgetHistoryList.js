@@ -17,7 +17,7 @@ const BudgetHistoryList = ({ items, removeItem }) => {
         <td>{name}</td>
         <td>{category}</td>
         <td>{amount}</td>
-        <button onClick={removeItem} value={id}>Usuń</button>
+        <td><button onClick={removeItem} value={id}>Usuń</button></td>
 
         </tr>
     ))}

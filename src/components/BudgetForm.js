@@ -8,7 +8,7 @@ const BudgetForm = ({ handleAddItem, categories }) => {
     e.target.reset();
   };
   return (
-    <div>
+    <div style={{background: 'lightgrey', padding: 10 }}>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div>
           <input
