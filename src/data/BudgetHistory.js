@@ -1,6 +1,6 @@
 const budgetHistory = [
   {
-    id: 1,
+    id: '1-22',
     type: 'income',
     name: 'Hulajnoga',
     category: 'Sport',

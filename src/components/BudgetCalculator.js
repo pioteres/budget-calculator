@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import nextId, { setPrefix } from 'react-id-generator';
 import BudgetForm from './BudgetForm';
 import BudgetHistoryList from './BudgetHistoryList';
+import { uuid } from 'uuidv4';
 import categories from '../data/Categories';
 import budgetHistory from '../data/BudgetHistory';
-
-setPrefix('');
 
 function BudgetCalculator() {
   const getHistory = () =>
@@ -24,14 +22,17 @@ function BudgetCalculator() {
   const [balance, setBalance] = useState(getBalance(incomes, expenses));
 
   const removeItem = (item) => {
+    console.log(item.target.value);
     const newBudgetList = budgetList.filter(
-      (elem) => elem.id !== parseInt(item.target.value)
+      (elem) => elem.id !== item.target.value
+
     );
+    console.log(newBudgetList);
     setBudgetList(newBudgetList);
   };
 
   const handleAddItem = (itemData) => {
-    itemData.id = parseInt(nextId(1));
+    itemData.id = uuid();
     itemData.amount = parseFloat(itemData.amount);
     setBudgetList([...budgetList, itemData]);
   };

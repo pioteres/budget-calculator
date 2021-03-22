@@ -4,7 +4,6 @@ const BudgetHistoryList = ({ items, removeItem }) => {
       <table>
     <thead>
       <tr>
-      <th>Id</th>
       <th>Nazwa</th>
       <th>Kategoria</th>
       <th>Kwota</th>
@@ -13,12 +12,10 @@ const BudgetHistoryList = ({ items, removeItem }) => {
     <tbody>
     {items.map(({id, name, category, amount}) => (
       <tr key={id}>
-        <td>{id}</td>
         <td>{name}</td>
         <td>{category}</td>
         <td>{amount}</td>
         <td><button onClick={removeItem} value={id}>Usuń</button></td>
-
         </tr>
     ))}
     </tbody>
